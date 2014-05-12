@@ -1,3 +1,3 @@
-# Atom html2jade package
+# Summary
 
-Convert selected HTML into jade.
+* ⌘B - convert selected HTML code to jade template.
