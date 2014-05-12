@@ -1,9 +1,11 @@
 {
   "name": "html2jade",
   "main": "./lib/html2jade",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "Convert HTML 2 jade.",
-  "activationEvents": ["html2jade:convert"],
+  "activationEvents": [
+    "html2jade:convert"
+  ],
   "repository": "https://github.com/mirek/atom-html2jade",
   "license": "MIT",
   "engines": {
