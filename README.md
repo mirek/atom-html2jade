@@ -1,3 +1,3 @@
 # Summary
 
-* ⌘B - convert selected HTML code to jade template.
+Convert selected HTML code to jade template.
