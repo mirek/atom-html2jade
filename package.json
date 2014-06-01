@@ -1,7 +1,7 @@
 {
   "name": "html2jade",
   "main": "./lib/html2jade",
-  "version": "0.4.0",
+  "version": "0.5.0",
   "description": "Convert HTML selection to jade.",
   "activationEvents": [
     "html2jade:convert"
