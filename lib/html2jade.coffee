@@ -9,7 +9,9 @@ module.exports =
     try
       editor = atom.workspace.activePaneItem
       selection = editor.getSelection()
-      html2jade.convertHtml selection.getText(), {}, (err, jade) ->
+      html = selection.getText()
+      html = "#{html}".replace /\>\s+\</, '><' # HACK: FIXME:
+      html2jade.convertHtml html, { bodyless: true }, (err, jade) ->
         unless err?
           selection.insertText jade
         else
