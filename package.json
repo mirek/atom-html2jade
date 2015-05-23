@@ -3,15 +3,15 @@
   "main": "./lib/html2jade",
   "version": "0.7.0",
   "description": "Convert HTML selection to jade.",
-  "activationEvents": [
-    "html2jade:convert"
-  ],
+  "activationCommands": {
+    "atom-text-editor": [ "html2jade:convert" ]
+  },
   "repository": "https://github.com/mirek/atom-html2jade",
   "license": "MIT",
   "engines": {
-    "atom": ">0.94.0"
+    "atom": ">=0.174.0 <2.0.0"
   },
   "dependencies": {
-    "html2jade": "~0.7.6"
+    "html2jade": "~0.8.4"
   }
 }

@@ -2,8 +2,13 @@ html2jade = require 'html2jade'
 
 module.exports =
 
-  activate: ->
-    atom.workspaceView.command "html2jade:convert", => @convert()
+  activate: (state) ->
+
+    # Register convert command.
+    atom.commands.add 'atom-workspace',
+      'html2jade:convert': => @convert()
+
+    # atom.workspaceView.command "html2jade:convert", => @convert()
 
   convert: ->
     try
