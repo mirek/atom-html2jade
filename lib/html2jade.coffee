@@ -12,8 +12,8 @@ module.exports =
 
   convert: ->
     try
-      editor = atom.workspace.activePaneItem
-      selection = editor.getSelection()
+      editor = atom.workspace.getActivePaneItem()
+      selection = editor.getLastSelection()
       html = selection.getText()
       html = "#{html}".replace /\>\s+\</, '><' # HACK: FIXME:
       html2jade.convertHtml html, { bodyless: true }, (err, jade) ->
