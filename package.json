@@ -1,5 +1,5 @@
 {
-  "name": "html2jade",
+  "name": "html2jade2",
   "main": "./lib/html2jade",
   "version": "0.7.1",
   "description": "Convert HTML selection to jade.",
@@ -8,7 +8,7 @@
       "html2jade:convert"
     ]
   },
-  "repository": "https://github.com/mirek/atom-html2jade",
+  "repository": "https://github.com/forivall/atom-html2jade",
   "license": "MIT",
   "engines": {
     "atom": ">=0.174.0 <2.0.0"
