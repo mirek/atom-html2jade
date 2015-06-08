@@ -1,10 +1,12 @@
 {
   "name": "html2jade",
   "main": "./lib/html2jade",
-  "version": "0.7.0",
+  "version": "0.7.1",
   "description": "Convert HTML selection to jade.",
   "activationCommands": {
-    "atom-text-editor": [ "html2jade:convert" ]
+    "atom-text-editor": [
+      "html2jade:convert"
+    ]
   },
   "repository": "https://github.com/mirek/atom-html2jade",
   "license": "MIT",
