@@ -8,18 +8,24 @@ module.exports =
     atom.commands.add 'atom-workspace',
       'html2jade-plus:convert': => @convert()
 
-    # atom.workspaceView.command "html2jade:convert", => @convert()
-
   convert: ->
-    try
-      editor = atom.workspace.getActivePaneItem()
-      selection = editor.getLastSelection()
-      html = selection.getText()
-      html = "#{html}".replace /\>\s+\</, '><' # HACK: FIXME:
-      html2jade.convertHtml html, { bodyless: true }, (err, jade) ->
-        unless err?
-          selection.insertText jade
-        else
-          console.error err
-    catch ex
-      console.error ex
+    unless (editor = atom.workspace.getActiveTextEditor())
+      return (atom.notifications.addWarning('No text editor found'))
+    html =
+      if (selection = editor.getLastSelection()) and not selection.isEmpty()
+        selection.getText()
+      else
+        selection = null
+        editor.getText()
+    html = "#{html}".replace /\>\s+\</, '><' # HACK: FIXME:
+    html2jade.convertHtml html, { bodyless: true }, (err, jade) ->
+      if err
+        atom.notifications.addError(err.name or err.toString(), {detail: e.message})
+        return
+      if selection
+        selection.insertText(jade)
+      else
+        atom.workspace.open().then (newEditor) ->
+          newEditor.insertText(jade)
+          if (jadeGrammar = atom.grammars.grammarForScopeName('source.jade'))
+            newEditor.setGrammar(jadeGrammar)
