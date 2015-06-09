@@ -1,0 +1,18 @@
+# See https://atom.io/docs/latest/creating-a-package#menus for more details
+
+'context-menu':
+  'atom-text-editor[data-grammar=\'text html basic\']': [
+    {label: 'Convert html to jade', command: 'html2jade-plus:convert'}
+  ]
+
+'menu': [
+  {
+    label: 'Packages'
+    submenu: [
+      label: 'html2jade-plus'
+      submenu: [
+        { label: 'Convert', command: 'html2jade-plus:convert' }
+      ]
+    ]
+  }
+]

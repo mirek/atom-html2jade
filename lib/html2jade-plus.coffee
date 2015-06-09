@@ -6,7 +6,7 @@ module.exports =
 
     # Register convert command.
     atom.commands.add 'atom-workspace',
-      'html2jade:convert': => @convert()
+      'html2jade-plus:convert': => @convert()
 
     # atom.workspaceView.command "html2jade:convert", => @convert()
 
